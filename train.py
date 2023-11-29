@@ -58,6 +58,7 @@ def main(config):
 
     # mel-spectrogram converter
     mel_spec = MelSpectrogram(config["mel_spec"])
+    mel_spec = mel_spec.to(device)
 
     trainer = Trainer(
         model,
