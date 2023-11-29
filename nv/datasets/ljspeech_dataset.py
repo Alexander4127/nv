@@ -23,7 +23,6 @@ class LJSpeechDataset(object):
 
     def _load_index(self):
         filenames = [filename for filename in (self._data_dir / "wavs").iterdir() if filename.suffix == ".wav"]
-        filenames = filenames[:100]
         start = time.perf_counter()
         index = []
         for f_name in tqdm(sorted(filenames), desc="Loading wav files"):
