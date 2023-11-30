@@ -66,7 +66,7 @@ class Generator(BaseModel):
             out = tr_block(out)
             res_out = self.res_blocks[block_idx * self.n_res_blocks](out)
             for res_idx in range(1, self.n_res_blocks):
-                res_out = self.res_blocks[block_idx * self.n_res_blocks + res_idx](out)
+                res_out = res_out + self.res_blocks[block_idx * self.n_res_blocks + res_idx](out)
             out = res_out / self.n_res_blocks
         out = self.last_conv(F.leaky_relu(out))
         return torch.tanh(out)
