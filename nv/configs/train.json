@@ -84,6 +84,7 @@
     "wandb_project": "nv_project",
     "wandb_name": "4_final",
     "len_epoch": 1000,
-    "log_step": 100
+    "log_step": 100,
+    "grad_norm_clip": 100
   }
 }
