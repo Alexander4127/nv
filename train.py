@@ -112,5 +112,3 @@ if __name__ == "__main__":
     ]
     config = ConfigParser.from_args(args, options)
     main(config)
-
-# logging losses, clipping grad norm
