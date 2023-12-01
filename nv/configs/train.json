@@ -62,14 +62,14 @@
   "lr_scheduler_disc": {
     "type": "StepLR",
     "args": {
-      "step_size": 1000,
+      "step_size": 40,
       "gamma": 0.999
     }
   },
   "lr_scheduler_gen": {
     "type": "StepLR",
     "args": {
-      "step_size": 1000,
+      "step_size": 40,
       "gamma": 0.999
     }
   },
