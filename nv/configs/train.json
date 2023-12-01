@@ -1,5 +1,5 @@
 {
-  "name": "1_initial",
+  "name": "4_final",
   "n_gpu": 1,
   "preprocessing": {
     "sr": 22050
@@ -76,13 +76,13 @@
   "trainer": {
     "epochs": 1000,
     "save_dir": "saved/",
-    "save_period": 5,
+    "save_period": 10,
     "verbosity": 2,
     "monitor": "off",
     "early_stop": 100,
     "visualize": "wandb",
     "wandb_project": "nv_project",
-    "wandb_name": "1_initial",
+    "wandb_name": "4_final",
     "len_epoch": 1000,
     "log_step": 100
   }
