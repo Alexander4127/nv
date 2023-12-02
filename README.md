@@ -61,4 +61,4 @@ python3 test.py
 
 ## Credits
 
-The code of model is based on a [notebook](https://github.com/XuMuK1/dla2023/blob/2023/week07/seminar07.ipynb).
+The code of model is based on an [asr-template project](https://github.com/WrathOfGrapes/asr_project_template).
