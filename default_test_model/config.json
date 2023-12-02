@@ -1,5 +1,5 @@
 {
-  "name": "test_initial_15_ep",
+  "name": "test_clip_140_ep",
   "n_gpu": 1,
   "preprocessing": {
     "sr": 22050
@@ -82,7 +82,7 @@
     "early_stop": 100,
     "visualize": "wandb",
     "wandb_project": "nv_project",
-    "wandb_name": "test_initial_15_ep",
+    "wandb_name": "test_final_140_ep",
     "len_epoch": 1000,
     "log_step": 100
   }
