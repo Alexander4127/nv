@@ -43,7 +43,7 @@ gdown.download("https://drive.google.com/uc?id=1I5qPDu6Bsc_xm6u6U35e867RRNeqi0v3
 Model evaluation is executed by command
 ```shell
 python3 test.py \
-   -i default_test_model/text.txt \
+   -i default_test_model/test \
    -r default_test_model/checkpoint.pth \
    -o output \
    -l False
