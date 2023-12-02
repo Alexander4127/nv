@@ -50,12 +50,14 @@ def main(args, config):
 
     # read audio filenames and texts
     audio_names = [filename for filename in sorted(Path(args.input_dir).iterdir()) if filename.suffix == ".wav"]
-    with open(Path(args.input_dir) / "text.txt") as file:
-        texts = [line.strip() for line in file.readlines()]
+    text_path = Path(args.input_dir) / "text.txt"
+    if text_path.exists():
+        with open(text_path) as file:
+            texts = [line.strip() for line in file.readlines()]
 
     sr = config["preprocessing"]["sr"]
     with torch.no_grad():
-        for idx, (audio_name, text) in tqdm(enumerate(zip(audio_names, texts)), total=len(audio_names), desc="Infer"):
+        for idx, audio_name in tqdm(enumerate(audio_names), total=len(audio_names), desc="Infer"):
             name = audio_name.stem
             audio, _ = sf.read(os.path.join('', audio_name))
             audio = torch.tensor(audio).to(torch.float32).unsqueeze(0).to(device)
@@ -64,7 +66,8 @@ def main(args, config):
             torchaudio.save(Path(args.output) / f"{name}.wav", pred_audio, sample_rate=sr)
             if writer is not None:
                 writer.set_step(step=idx, mode="test")
-                writer.add_text("text", text)
+                if text_path.exists():
+                    writer.add_text("text", texts[idx])
                 writer.add_audio("pred_audio", pred_audio, sample_rate=sr)
                 writer.add_audio("target_audio", audio, sample_rate=sr)
 
